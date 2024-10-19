@@ -1,0 +1,40 @@
+body {
+    background-color: #FDE8F1;
+}
+.container-fluid {
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.custom-height {
+    height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .custom-height {
+        height: 33.33vh;
+    }
+    h1 {
+        font-size: 23px;
+    }
+    .barra-rosa {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.darkpink-bg {
+    background-color: #A30057;
+}
+
+.league-spartan {
+    font-family: "League Spartan", sans-serif;
+}
+
+.textbox {
+    padding:3dvw
+}
+
+h1 {
+    font-size: 24px; /* Default font size */
+}
