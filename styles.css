@@ -27,13 +27,20 @@ body {
     .h1-pagina-inicial {
         font-size: 18px;
     }
+    .barra-rosa {
+        display: flex;
+        align-items: center;
+    }
 }
 
 @media (max-width: 320px) {
     .h1-pagina-inicial {
         font-size: 14px;
     }
-
+    .barra-rosa {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .darkpink-bg {
