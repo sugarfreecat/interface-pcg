@@ -14,13 +14,26 @@ body {
     .custom-height {
         height: 33.33vh;
     }
-    h1 {
+    .h1-pagina-inicial {
         font-size: 23px;
     }
     .barra-rosa {
         display: flex;
         align-items: center;
     }
+}
+
+@media (max-width: 576px) {
+    .h1-pagina-inicial {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 320px) {
+    .h1-pagina-inicial {
+        font-size: 14px;
+    }
+
 }
 
 .darkpink-bg {
