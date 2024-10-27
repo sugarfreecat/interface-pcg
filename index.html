@@ -3,25 +3,41 @@
     <head>
         <title>Interface PCG</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!--deixa a página responsiva-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> <!--bootstrap-->
+        <link rel="stylesheet" href="styles.css"> <!--linka pro arquivo css-->
+        <link rel="preconnect" href="https://fonts.googleapis.com"> <!--fonte para o h1-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--fonte para o h1-->
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet"> <!--fonte para o h1-->
     </head>
     <body>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="barra-rosa col-12 col-md-5 custom-height darkpink-bg">
-                    <div class="col-12 textbox">
+        <div class="container-fluid"> <!--container se adapta a todos os tamanhos de tela-->
+            <div class="row"> 
+                <div class="barra-rosa col-12 col-md-5 custom-height darkpink-bg"> <!--pra fazer: acertar padding-->
+                    <div class="imagem col-6 col-sm-5 col-md-12"> <!--ocupa 6 colunas normalmente, 5 a partir d-->
+                        <img src="madoka.webp" alt="madoka pose de luta" class="img-madoka">
+                    </div>
+                    <div class="col-6 textbox col-md-12 col-sm-7">
                         <h1 class="h1-pagina-inicial text-light text-center league-spartan fw-bold">Relação Entre o Aumento de Popularidade dos Animes e o Declínio da Taxa de Natalidade no Japão</h1>
+                    </div>
+                </div>
+                <div class="container col-12 col-sm-9 col-md-5">
+                    <h2 class="obj-pesq league-spartan">OBJETIVOS DA NOSSA PESQUISA</h2>
+                    <div class="d-flex align-items-center">
+                        <img src="madoka-homura.png" alt="madoka e homura" class="img-madoka-homura">
+                        <span class="ms-3">
+                            <div class="league-spartan caixa-rosa my-1">Explorar a relação entre animes e natalidade</div>
+                            <div class="league-spartan caixa-rosa my-2">Analisar como os animes influenciam as atitudes e comportamentos em relação à parentalidade e à formação de famílias</div>
+                        </span>
+                    </div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <button class="league-spartan mx-1">VER PESQUISA</button>
+                        <button class="league-spartan mx-1">VER RESULTADOS</button>
                     </div>
                 </div>
             </div>
         </div>
-        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
