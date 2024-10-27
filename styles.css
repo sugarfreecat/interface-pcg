@@ -2,6 +2,14 @@ body {
     background-color: #FDE8F1;
 }
 
+.dropdown {
+    margin-left: auto;
+}
+
+.header-container {
+    height:fit-content;
+}
+
 .container-fluid {
     margin: 0%;
     box-sizing: border-box;
@@ -45,7 +53,7 @@ body {
     place-items: center;
 }
 
-button {
+.btn-rosa {
     background-color: #A30057;
     border-radius: 17px;
     font-size: 21px;
@@ -55,7 +63,7 @@ button {
     border: none;
 }
 
-button:hover {
+.btn-rosa:hover {
     scale: 1.1;
 }
 
@@ -109,7 +117,7 @@ button:hover {
     .obj-pesq {
         font-size: 28px;
     }
-    button {
+    .btn-rosa {
         font-size: 18px;
     }
 }
@@ -134,7 +142,7 @@ button:hover {
     .obj-pesq {
         font-size: 26px;
     }
-    button {
+    .btn-rosa {
         font-size: 17px;
     }
 }
@@ -159,7 +167,7 @@ button:hover {
     .obj-pesq {
         font-size: 24px;
     }
-    button {
+    .btn-rosa {
         font-size: 15px;
     }
 }
@@ -184,7 +192,7 @@ button:hover {
     .obj-pesq {
         font-size: 23px;
     }
-    button {
+    .btn-rosa {
         font-size: 14px;
     }
 }
@@ -227,7 +235,7 @@ button:hover {
     .obj-pesq {
         font-size: 23px;
     }
-    button {
+    .btn-rosa {
         font-size: 14px;
     }
 }
@@ -255,7 +263,7 @@ button:hover {
     .obj-pesq {
         font-size: 23px;
     }
-    button {
+    .btn-rosa {
         font-size: 14px;
     }
 }
@@ -271,7 +279,7 @@ button:hover {
     .obj-pesq {
         font-size: 23px;
     }
-    button {
+    .btn-rosa {
         font-size: 14px;
     }
 }
@@ -290,7 +298,7 @@ button:hover {
     .obj-pesq {
         font-size: 17px;
     }
-    button {
+    .btn-rosa {
         font-size: 9px;
     }
 }
@@ -318,7 +326,7 @@ button:hover {
     .obj-pesq {
         font-size: 16px;
     }
-    button {
+    .btn-rosa {
         font-size: 9px;
     }
     .container {
