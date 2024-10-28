@@ -2,19 +2,49 @@ body {
     background-color: #FDE8F1;
 }
 
+.dropdown, .footer-dropdown {
+    margin-left: auto;
+}
+
+.header, .dropdown-toggle, .dropdown-menu, .footer {
+    font-size: 11px;
+}
+
+.op1 {
+    min-width: 100%;
+    padding: 2%;
+    text-align: center;
+}
+
+.op2 {
+    min-width: fit-content;
+    padding: 1%;
+}
+
+.header-container, .footer-container {
+    height:fit-content;
+    background-color: #5F5454;
+    align-items: center;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: none;
+}
+
 .container-fluid {
     margin: 0%;
     box-sizing: border-box;
 }
 
-.imagem {
+.img-txt {
     display: grid;
     place-items: center;
 }
 
 .container {
-    height:fit-content;
-    margin:auto;
+    height: fit-content;
+    margin: auto;
 }
 
 .flex-container {
@@ -40,44 +70,63 @@ body {
     padding:3dvw
 }
 
+.barra-rosa {
+    display: grid;
+    place-items: center;
+}
+
+.btn-rosa {
+    background-color: #A30057;
+    border-radius: 17px;
+    font-size: 21px;
+    font-weight: bold;
+    color: #E8E8E8;
+    padding: 10px 15px 5px;
+    border: none;
+}
+
+.btn-rosa:hover {
+    transition-duration: 0.5s;
+    background-color:#FFD5E6;
+    color:#A30057;
+}
+
+.caixa-rosa {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #FFD5E6;
+    color:#A30057;
+}
+
+.obj-pesq {
+    color:#A30057;
+    font-weight: bold;
+    text-align: center;
+}
+.img-madoka-homura {
+    width:290px;
+    height: auto;
+}
+
+.img-txt-2 {
+    display: flex;
+}
 
 @media (min-width: 768px) {
     .img-madoka {
-        width: 310px;
+        width: 400px;
         height: auto;
+        order: 2;
     }
     .h1-pagina-inicial {
         font-size: 24px;
-    }
-    button {
-        background-color: #A30057;
-        border-radius: 17px;
-        font-size: 21px;
-        font-weight: bold;
-        color: #E8E8E8;
-        padding: 10px 15px 5px;
-        border: none;
+        padding: 5%;
     }
     
-    .caixa-rosa {
-        padding: 5px 10px;
-        border-radius: 15px;
-        font-size: 20px;
-        font-weight: bold;
-        background-color: #FFD5E6;
-        color:#A30057;
-    }
     .custom-height {
         height: 100vh;
-    }
-    .obj-pesq {
-        color:#A30057;
-        font-weight: bold;
-        text-align: center;
-    }
-    .img-madoka-homura {
-        width:290px;
-        height: auto;
     }
 }
 
@@ -92,12 +141,21 @@ body {
     .obj-pesq {
         font-size: 28px;
     }
-    button {
+    .btn-rosa {
         font-size: 18px;
     }
 }
 
 @media (max-width: 1060px) {
+    .img-madoka {
+        width: 350px;
+        height: auto;
+        order: 2;
+    }
+    .h1-pagina-inicial {
+        font-size: 22px;
+        padding: 5%;
+    }
     .img-madoka-homura {
         width: 200px;
         height: auto;
@@ -108,12 +166,21 @@ body {
     .obj-pesq {
         font-size: 26px;
     }
-    button {
+    .btn-rosa {
         font-size: 17px;
     }
 }
 
 @media (max-width: 960px) {
+    .img-madoka {
+        width: 325px;
+        height: auto;
+        order: 2;
+    }
+    .h1-pagina-inicial {
+        font-size: 20px;
+        padding: 5%;
+    }
     .img-madoka-homura {
         width: 190px;
         height: auto;
@@ -124,12 +191,21 @@ body {
     .obj-pesq {
         font-size: 24px;
     }
-    button {
+    .btn-rosa {
         font-size: 15px;
     }
 }
 
 @media (max-width: 890px) {
+    .img-madoka {
+        width: 300px;
+        height: auto;
+        order: 2;
+    }
+    .h1-pagina-inicial {
+        font-size: 18px;
+        padding: 5%;
+    }
     .img-madoka-homura {
         width: 155px;
         height: auto;
@@ -140,17 +216,22 @@ body {
     .obj-pesq {
         font-size: 23px;
     }
-    button {
+    .btn-rosa {
         font-size: 14px;
     }
 }
 
 @media (max-width: 768px) {
+    .img-txt {
+        display: flex;
+        justify-content: center;
+    }
     .custom-height {
         height: 33.33vh;
     }
     .h1-pagina-inicial {
         font-size: 23px;
+        padding: 0%;
     }
     .barra-rosa {
         display: flex;
@@ -158,14 +239,39 @@ body {
         justify-content: center;
     }
     .img-madoka {
-        width: 180px;
+        width: 225px;
         height: auto;
+        padding-right: 5%;
+    }
+    .container {
+        position: relative;
+        top: 50px;
+    }
+    .footer-container {
+        position: relative;
+        top: 300px;
+    }
+    .img-madoka-homura {
+        width: 200px;
+        height: auto;
+    }
+    .caixa-rosa {
+        font-size: 16px;
+    }
+    .obj-pesq {
+        font-size: 23px;
+    }
+    .btn-rosa {
+        font-size: 14px;
+    }
+    .footer-container{
+        order: 1;
     }
 }
 
 @media (max-width: 576px) {
     .h1-pagina-inicial {
-        font-size: 18px;
+        font-size: 17px;
     }
     .barra-rosa {
         display: flex;
@@ -173,8 +279,60 @@ body {
         justify-content: center;
     }
     .img-madoka {
-        width: 170px;
+        width: 165px;
         height: auto;
+    }
+    .img-madoka-homura {
+        width: 160px;
+        height: auto;
+    }
+    .caixa-rosa {
+        font-size: 13px;
+    }
+    .obj-pesq {
+        font-size: 23px;
+    }
+    .btn-rosa {
+        font-size: 14px;
+    }
+    .container {
+        position: relative;
+        top: 50px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .img-madoka-homura {
+        width: 145px;
+        height: auto;
+    }
+    .caixa-rosa {
+        font-size: 11px;
+    }
+    .obj-pesq {
+        font-size: 23px;
+    }
+    .btn-rosa {
+        font-size: 14px;
+    }
+    .container {
+        position: relative;
+        top: 50px;
+    }
+    
+}
+
+@media (max-width: 430px) {
+    .img-txt-2 {
+        display: grid;
+        place-items: center;
+    }
+    .obj-pesq {
+        font-size: 17px;
+    }
+    .btn-rosa {
+        font-size: 9px;
     }
 }
 
@@ -190,5 +348,18 @@ body {
     .img-madoka {
         width: 120px;
         height: auto;
+    }
+    .img-madoka-homura {
+        width: 130px;
+        height: auto;
+    }
+    .caixa-rosa {
+        font-size: 11px;
+    }
+    .obj-pesq {
+        font-size: 16px;
+    }
+    .btn-rosa {
+        font-size: 9px;
     }
 }
