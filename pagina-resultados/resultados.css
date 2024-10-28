@@ -23,9 +23,12 @@ h1 {
     color: white;
     font-weight: bold;
 }
-#barra-lateral{
+
+
+
+.barra-lateral{
     height: 100vh;
-    width: 20vh;
+    width: 130px;
     background-color: #A30057;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px; 
@@ -33,9 +36,10 @@ h1 {
     display: flex; /* Adicionando flexbox */
     flex-direction: column; /* Direção da coluna */
     align-items: center;
+    flex-shrink: 0;
 }
 
-#barra-lateral h2{
+.barra-lateral h2{
     color: white;
     text-align: center;
      /* Usando vw para ajuste automático */
@@ -43,15 +47,21 @@ h1 {
     flex-grow: 0; /* Não expande */
 }
 
-#barra-lateral #legenda{
+.barra-lateral #legenda{
     font-size: 1.9vw;
 }
-
-#header{
-    background-color: #A30057;
-    height: 15vh;
-    overflow: hidden;
+.barra-lateral #sayaka{
+    width: 125px;
+    height: 230px;
+}
+.header{
     position: relative;
+    display: flex;
+    background-color: #A30057;
+    height: auto;
+    overflow: hidden;
+    justify-content: center;
+    width:auto;
 }
 
 #link-voltar {
@@ -64,16 +74,6 @@ h1 {
 
 #link-voltar:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
-}
-
-.header-image {
-    width: auto; /* Mantém a proporção original */
-    height: auto; /* Mantém a proporção original */
-    object-fit: contain; /* Ajusta a imagem para caber no contêiner sem cortar */
-    position: absolute; /* Para garantir que a imagem se ajuste ao header */
-    top: 50%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta para centralizar a imagem corretamente */
 }
 
 #kyubey-sentado{
@@ -89,8 +89,8 @@ h1 {
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translate(100%, -50%);
-  width: 445px;
+  transform: translateY(-50%);
+  width: 200px;
   height: 110px;
 }
 
@@ -98,6 +98,7 @@ h1 {
     height: 20px;
     width: 20px;
     margin-top:20px;
+    margin-left: 7px;
 }
 .legendanat{
     display:flex;
@@ -118,7 +119,7 @@ h1 {
 .grafico {
     position: absolute;
     top: 50%;
-    left: 53%;
+    left: 56%;
     transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
     display: flex;
     justify-content: center;
@@ -129,4 +130,303 @@ h1 {
     width: 1163px;
     height: 352px;
     margin-left: 0; /* Remove margens desnecessárias */
+}
+
+.descricao{
+    margin-top: -240px;
+  font-size: 1rem;
+  color: #333;
+  padding: 11px;
+  max-width: 800px;
+  margin-left: 398px;
+  margin-right: auto;
+  font-weight: bold;
+}
+
+
+@media (max-width:1344px){
+    .header{
+        height: auto;
+    }
+    .grafico img{
+        width:1000px;
+        height: 300px;
+    }
+    .barra-lateral{
+        width:95px;
+    }
+    .titulo{
+        font-size: 2.5rem;
+    }
+    .barra-lateral h2{
+        font-size: 0.7rem;
+    }
+    .barra-lateral #legenda{
+        font-size:1rem
+    }
+    #kyubey-sentado{
+        width: 120px;
+        height: 80px;
+    }
+    #kyubey-deitado{
+        width: 150px;
+        height: 73px;
+    }
+    .barra-lateral #sayaka{
+        width: 100px;
+        height: 170px;
+    }
+    .barra-lateral .bola{
+        width: 18px;
+        height: 18px;
+    }
+}
+@media(max-width:1298px){
+    .header{
+        width: 100%;
+        height: auto;
+    }
+    .grafico img{
+        width:995px;
+        height: 300px;
+    }
+    .barra-lateral{
+        width: 83px;
+    }
+    .titulo{
+        font-size: 2.2rem;
+    }
+    .barra-lateral h2{
+        font-size: 0.7rem;
+        margin-right: 5px;
+    }
+    .barra-lateral .bola{
+        width: 15px;
+        height: 15px;
+        margin-right: 2px;
+    }
+    #kyubey-sentado{
+        width: 90px;
+        height: 60px;
+    }
+    #kyubey-deitado{
+        width: 130px;
+        height: 65px;
+    }
+    .barra-lateral #sayaka{
+        width: 100px;
+        height: 170px;
+        margin-left: 10px;
+    }
+    .barra-lateral #legenda{
+        margin-left: 5px;
+    }
+}
+@media(max-width:1271px){
+    .header{
+        width: 100%;
+        height: auto;
+    }
+    .grafico img{
+        width:950px;
+        height: 280px;
+    }
+    .titulo{
+        font-size: 1.5rem;
+    }
+    .barra-lateral .bola{
+        height: 10px;
+        width: 12px;
+    }
+    .barra-lateral h2{
+        font-size: 0.6rem;
+        margin-right: 5px;
+    }
+    #kyubey-sentado{
+        width: 85px;
+        height: 58px;
+    }
+    #kyubey-deitado{
+        width: 115px;
+        height: 65px;
+    }
+    .barra-lateral #sayaka{
+        width: 80px;
+        height: 150px;
+        margin-left: 5px;
+    }
+    .barra-lateral{
+        width: 70px;
+    }
+    .barra-lateral #legenda{
+        font-size: 0.8rem;
+    }
+}
+
+@media(max-width:1162){
+    .header{
+        width: 100%;
+        height: auto;
+    }
+    .grafico img{
+        width:890px;
+        height: 200px;
+    }
+    .titulo{
+        font-size: 1.5rem;
+    }
+    .barra-lateral .bola{
+        height: 10px;
+        width: 12px;
+    }
+    .barra-lateral h2{
+        font-size: 0.6rem;
+        margin-right: 5px;
+    }
+    #kyubey-sentado{
+        width: 85px;
+        height: 58px;
+    }
+    #kyubey-deitado{
+        width: 150px;
+        height: 73px;
+    }
+    .barra-lateral #sayaka{
+        width: 80px;
+        height: 150px;
+        margin-left: 5px;
+    }
+    .barra-lateral{
+        width: 70px;
+    }
+    .barra-lateral #legenda{
+        font-size: 0.8rem;
+    }
+}
+
+@media(max-width:1116px){
+    .header{
+        width: 100%;
+        height: auto;
+    }
+    .grafico img{
+        width:880px;
+        height: 268px;
+    }
+    .titulo{
+        font-size: 1.5rem;
+    }
+    .barra-lateral .bola{
+        height: 10px;
+        width: 12px;
+    }
+    .barra-lateral h2{
+        font-size: 0.6rem;
+        margin-right: 5px;
+    }
+    #kyubey-sentado{
+        width: 85px;
+        height: 58px;
+    }
+    #kyubey-deitado{
+        width: 120px;
+        height: 55px;
+    }
+    .barra-lateral #sayaka{
+        width: 80px;
+        height: 150px;
+        margin-left: 5px;
+    }
+    .barra-lateral{
+        width: 70px;
+    }
+    .barra-lateral #legenda{
+        font-size: 0.8rem;
+    }
+}
+
+
+@media (max-width:1078px){
+    
+    .header{
+        width: 100%;
+        height: auto;
+    }
+    .grafico img{
+        width:850px;
+        height: 250px;
+    }
+    .titulo{
+        font-size: 1.5rem;
+    }
+    .barra-lateral .bola{
+        height: 10px;
+        width: 12px;
+    }
+    .barra-lateral h2{
+        font-size: 0.6rem;
+        margin-right: 5px;
+    }
+    #kyubey-sentado{
+        width: 85px;
+        height: 58px;
+    }
+    #kyubey-deitado{
+        width: 120px;
+        height: 55px;
+    }
+    .barra-lateral #sayaka{
+        width: 80px;
+        height: 150px;
+        margin-left: 5px;
+    }
+    .barra-lateral{
+        width: 70px;
+    }
+    .barra-lateral #legenda{
+        font-size: 0.8rem;
+    }
+}
+
+
+
+@media(max-width:1024px){
+    .header{
+        width: 100%;
+        height: auto;
+    }
+    .grafico img{
+        width:790px;
+        height: 250px;
+    }
+    .titulo{
+        font-size: 1.2rem;
+    }
+    .barra-lateral .bola{
+        height: 10px;
+        width: 12px;
+    }
+    .barra-lateral h2{
+        font-size: 0.5rem;
+        margin-right: 5px;
+    }
+    #kyubey-sentado{
+        width: 85px;
+        height: 48px;
+    }
+    #kyubey-deitado{
+        width: 120px;
+        height: 51px;
+    }
+    .barra-lateral #sayaka{
+        width: 80px;
+        height: 150px;
+        margin-left: 5px;
+    }
+    .barra-lateral{
+        width: 70px;
+    }
+    .barra-lateral #legenda{
+        font-size: 0.8rem;
+    }
 }
