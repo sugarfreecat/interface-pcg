@@ -2,12 +2,34 @@ body {
     background-color: #FDE8F1;
 }
 
-.dropdown {
+.dropdown, .footer-dropdown {
     margin-left: auto;
 }
 
-.header-container {
+.header, .dropdown-toggle, .dropdown-menu, .footer {
+    font-size: 11px;
+}
+
+.op1 {
+    min-width: 100%;
+    padding: 2%;
+    text-align: center;
+}
+
+.op2 {
+    min-width: fit-content;
+    padding: 1%;
+}
+
+.header-container, .footer-container {
     height:fit-content;
+    background-color: #5F5454;
+    align-items: center;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: none;
 }
 
 .container-fluid {
@@ -64,7 +86,9 @@ body {
 }
 
 .btn-rosa:hover {
-    scale: 1.1;
+    transition-duration: 0.5s;
+    background-color:#FFD5E6;
+    color:#A30057;
 }
 
 .caixa-rosa {
@@ -220,10 +244,12 @@ body {
         padding-right: 5%;
     }
     .container {
-        position: absolute;
-        top: 63%;
-        left: 50%;
-        transform: translate(-50%, -63%);
+        position: relative;
+        top: 50px;
+    }
+    .footer-container {
+        position: relative;
+        top: 300px;
     }
     .img-madoka-homura {
         width: 200px;
@@ -237,6 +263,9 @@ body {
     }
     .btn-rosa {
         font-size: 14px;
+    }
+    .footer-container{
+        order: 1;
     }
 }
 
@@ -266,6 +295,11 @@ body {
     .btn-rosa {
         font-size: 14px;
     }
+    .container {
+        position: relative;
+        top: 50px;
+    }
+    
 }
 
 @media (max-width: 480px) {
@@ -282,18 +316,17 @@ body {
     .btn-rosa {
         font-size: 14px;
     }
+    .container {
+        position: relative;
+        top: 50px;
+    }
+    
 }
 
 @media (max-width: 430px) {
     .img-txt-2 {
         display: grid;
         place-items: center;
-    }
-    .container {
-        position: absolute;
-        top: 65%;
-        left: 50%;
-        transform: translate(-50%, -65%);
     }
     .obj-pesq {
         font-size: 17px;
@@ -328,11 +361,5 @@ body {
     }
     .btn-rosa {
         font-size: 9px;
-    }
-    .container {
-        position: absolute;
-        top: 68%;
-        left: 50%;
-        transform: translate(-50%, -68%);
     }
 }
