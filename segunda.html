@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Conta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body, html{
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* remove barras de rolagem */
+        }
+
+        .container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+        }
+
+        .imagem-madoka {
+            background-color: #FFD2CF;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        .imagem-madoka h1 {
+            font-size: 36px;
+            color: #D53369;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .imagem-madoka img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .aba-branca {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+        }
+
+       .aba-branca h2 {
+            font-size: 30px; /* config do cabeçalho */
+            font-weight: bold;
+            margin-bottom: 25px;
+            margin-left: 10px;
+            margin-top: 40px;
+            color: #333;
+        }
+       .botao-volte button{
+        padding: 10px;
+        color: black;
+        cursor: pointer;
+       }
+
+       .voltar {
+        text-decoration: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+        transition: underline 0.3s; /*para aparecer a linha assim que o mouse passar por cima*/
+
+       }
+       .voltar:hover{
+        color: #D53369;
+        text-decoration: underline;
+       }
+
+        form {
+            display: flex; /* config dos intens da tela, ele se adapta o conteudo ao tamanho 
+            da tela, responsivo*/
+            flex-direction: column;
+            margin-top: 65px;
+            margin-right: 60px;
+        }
+
+        label {
+            text-align: left; /*depois de 40 min achei o modo pra deixar apenas o texto de fora para a esuquerda*/
+            width: 92%; /*porcentagem de quão a direita ele fica*/
+            padding: 10px;
+            color: #090808;
+            margin: 1px;
+        }
+
+        input {
+            font-size: 16px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border:1px solid #D53369;
+            border-radius: 5px;
+            background-color: #F8E6E6;
+        }
+
+        .senha-confirmar {
+            margin: 7vh auto; /* centraliza de lado e aplica a margem */
+            height: 10vh;
+            padding: 0 20px; /* adiciona um preenchimento nas laterais */
+            display: flex;
+            justify-content: space-between; /* espaça de forma uniforme os itens */
+            align-items: center; 
+            gap: 25%; /* afasta os botões um dos outros, a "%", nesse caso é mais eficiente*/
+            
+        }
+
+        button[type="cadastrar"] {
+            background-color: #D53369;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button[type="cadastrar"]:hover {
+            color:#D53369;
+            background-color: #FFE4E1;;
+        }
+
+        .separador {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .separador hr {
+            flex: 1;
+            border: none;
+            border-top: 1px solid #e0aabb;
+        }
+
+        .separador span {
+            padding: 0 10px;
+            color: #888;
+        }
+
+        .login-social { /*coloquei esse nome para as redes sociais*/
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .login-social button {
+            background-color: #FFF;
+            border: 1px solid #e0aabb;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 30%;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+       
+
+        .login-social .google{
+            text-decoration: none; /*para não aparecer nenhuma listra em baixo*/
+            background-color: #FFF;
+            border: 1px solid #e0aabb;
+            color: #DB4437;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+            width: 30%;
+            text-align: center;
+
+        }
+        .login-social .google:hover{
+            background-color: #D53369;
+            color:#090808;
+        }
+          
+
+        .login-social .facebook {
+            text-decoration: none; /*para não aparecer nenhuma listra em baixo*/
+            background-color: #FFF;
+            border: 1px solid #e0aabb;
+            color: #3B5998;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+            width: 30%;
+            text-align: center;
+        }
+        .login-social .facebook:hover{
+            background-color: #D53369;
+            color:#090808;
+        }
+
+        .login-social .apple {
+            text-decoration: none; /*para não aparecer nenhuma listra em baixo*/
+            background-color: #FFF;
+            border: 1px solid #e0aabb;
+            color: black;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+            width: 30%;
+            text-align: center;
+        }
+        .login-social .apple:hover{
+            background-color: #D53369;
+        }
+        
+        @media (max-width: 700px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .aba-branca, .imagem-madoka {
+                width: 100%;
+            }
+            .imagem-madoka {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .imagem-madoka img {
+                width: 150px;
+                height: auto;
+            }
+            .imagem-madoka h1 {
+                margin: 0%;
+                padding: 5%;
+            }
+            .aba-branca {
+                padding-top: 0px;
+            }
+        }
+        
+        @media (max-width: 372px) {
+            .aba-branca h2 {
+                font-size: 24px;
+            }
+            .imagem-madoka h1 {
+                font-size: 26px;
+            }
+            .tudo-espaco {
+                margin-bottom: 0px;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="imagem-madoka">
+            <h1></h1>
+            <img src="madoka2.png" alt="Imagem de Anime">
+        </div>
+        <div class="botao-volte">
+        <a href="login1.html"class="voltar">Voltar</a>
+    </div>
+        <div class="aba-branca">
+            <h2>Crie sua conta</h2>
+            <form id="registro">
+                <label for="name">Nome completo</label>
+                <input type="text" id="name" placeholder="Nome completo" required>
+                
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="E-mail" required>
+                
+                <div class="senha-confirmar">
+                    <div>
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" placeholder="Senha" required>
+                    </div>
+                    <div>
+                        <label for="senha-confirmar">Confirmar senha</label>
+                        <input type="password" id="confirm-password" placeholder="Confirmar senha" required>
+                    </div>
+                </div>
+                
+                <button type="cadastrar">Cadastrar</button>
+                
+                <div class="separador">
+                    <hr><span>OU</span><hr>
+                </div>
+                <div class="login-social">
+                  <a href="https://accounts.google.com/v3/signin/identifier?dsh=S1812573153%3A1655944654029516&flowEntry=ServiceLogin&flowName=WebLiteSignIn&ifkv=AX3vH39E0iYVTmn-NoMNM_C35EPrno8LWsRx2Qhr0HApkVLZ-Zc_Vql8ouaSQOiXzEmthrpOPAV5"class="google">Faça login com o Google</a>
+                  <a href="https://pt-br.facebook.com/login/device-based/regular/login/fac"class="facebook">Faça login com o Facebook</a>
+                  <a href="https://www.icloud.com/mail/"class=apple>Faça login com a Apple</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("registro").addEventListener("submit", function(event) {
+            event.preventDefault(); // impede o envio caso não esteja tudo preenchido
+
+            const name = document.getElementById("name").value; // esta validando
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+
+            // validar as senhas
+            if (password !== confirmPassword) {
+                alert("As senhas não coincidem.");
+                return;
+            }
+
+        });
+
+    </script>
+</body>
+</html>
