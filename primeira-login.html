@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface de Login </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* remove barras de rolagem */
+        }
+
+
+
+        .container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+
+        }
+
+        .imagem-madoka {
+            background-color: #FFD2CF;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .imagem-madoka h1 {
+            font-size: 36px;
+            color: #D53369;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .imagem-madoka img {
+            max-width: 100%;
+            height: auto;}
+
+        .aba-branca {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .aba-branca h2 {
+            font-size: 30px; /* config do cabeçalho */
+            font-weight: bold;
+            margin-bottom: 40px;
+            margin-left: 20px;
+            margin-top: 40px;
+            color: #0d0a0a;
+        }
+
+        .tudo-espaco {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            
+        }
+
+       .tudo-espaco label {
+            text-align: left; /*depois de 40 min achei o modo pra deixar apenas o texto de fora para a esuquerda*/
+            width: 92%; /*porcentagem de quão a direita ele fica*/
+            padding: 10px;
+            color: #090808;
+            margin: 1px;
+        }
+
+        .tudo-espaco input {
+            margin-bottom: 20px; /*muda o espaço entre os botões*/
+            width: 90%;
+            padding: 10px; /*tamanho pra cima*/
+            border:1px solid #D53369;
+            border-radius: 5px;
+            background-color: #FFE4E1;
+            font-size: 16px;
+        }
+
+        .salvar-senha {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .botao {display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center; /*centralizar os botões*/
+        }
+
+        .botao button {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+            border: rgb(10, 5, 5);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .entrar-botao{
+            text-decoration: none;
+            background-color: #D53369;
+            color: #FFF;
+            border-radius: 5px;
+            padding: 15px 25px;
+            font-size: 16px;
+            width:40vh; /*largura do botão*/
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s; 
+        }
+
+        .entrar-botao:hover {
+            background-color:   #FFE4E1;;    /* cor de fundo ao passar o mouse */
+            color: #D53369;       }         
+    
+        .cadastrar-botao {
+            text-decoration: none;
+            background-color:#FFE4E1;     
+            color: #D53369;  
+            border-radius: 5px;     
+            padding: 15px 25px;
+            font-size: 16px;
+            width: 40vh; /*largura do botao*/
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s; /* Transições suaves */
+        }
+          
+        .cadastrar-botao:hover {
+            background-color: #D53369;    /* cor de fundo ao passar o mouse */
+            color: white;                  /* cor do texto ao passar o mouse */
+        }
+
+        .login-social {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .login-social button { /*a partir do momento que eu coloquei o encaminhamento para os links, as confis
+            pararam de funcionar para todos os botões, entao tive que refazer um por um, mas tambem nao podia apagar esse*/
+            background-color: #FFF;
+            padding: 10px 20px;
+            border: 1px solid #e0aabb;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        .login-social .google {
+            text-decoration: none; /*para não aparecer nenhuma listra em baixo*/
+            background-color: #FFF;
+            border: 1px solid #e0aabb;
+            color: #DB4437;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+            width: 30%;
+            text-align: center;
+        }
+        .login-social .google:hover{
+            background-color: #D53369;
+            color:#090808;
+        }
+
+        .login-social .facebook {
+            text-decoration: none; /*para não aparecer nenhuma listra em baixo*/
+            background-color: #FFF;
+            border: 1px solid #e0aabb;
+            color: #3B5998;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+            width: 30%;
+            text-align: center;
+        }
+        .login-social .facebook:hover{
+            background-color: #D53369;
+            color:#090808;
+        }
+
+        .login-social .apple {
+            text-decoration: none; /*para não aparecer nenhuma listra em baixo*/
+            background-color: #FFF;
+            border: 1px solid #e0aabb;
+            color: black;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+            width: 30%;
+            text-align: center;
+        } .login-social .apple:hover{
+            background-color: #D53369;
+        }
+           
+        .botao-esqueceu button{
+            text-align: right;
+            font-size: 14px;
+            color: #333;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .esqueceu-senha{
+            text-decoration: none;
+            color: #090808;
+            font-size: 14px;
+            margin-left: 74%;
+            position: relative;
+            top: -50px;
+            transition: underline 0.3s;
+        }
+        .esqueceu-senha:hover{
+            color: #D53369;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="imagem-madoka">
+            <h1>Animes</h1>
+            <div>
+                <img src="madoka2.png" alt="Madoka de Madoka Magica" style="width:375px;">
+            </div>
+        </div>
+        <div class="aba-branca">
+            <h2>Acesse sua conta</h2>
+            <form id="login">
+                <div class="tudo-espaco">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="E-mail" required>
+                </div>
+                <div class="tudo-espaco">
+                    <label for="password">Senha</label>
+                    <input type="password" id="senha" placeholder="Senha" required>
+                
+                </div>
+                <div class="salvar-senha">
+                    <input type="checkbox" id="salvar-senha">
+                    <label for="salvar-senha">Salvar senha</label>
+                </div>
+                <div class="botao-esqueceu"></div>
+                <a href="#" class="esqueceu-senha">Esqueceu a senha?</a>
+
+                <div class="botao">
+                    <a href="segunda.html"class="entrar-botao">Entrar</a>
+                    <a href="segunda.html"class="cadastrar-botao">Cadastrar</a>
+                </div>
+                <div class="login-social">
+                    <a href="https://accounts.google.com/v3/signin/identifier?dsh=S1812573153%3A1655944654029516&flowEntry=ServiceLogin&flowName=WebLiteSignIn&ifkv=AX3vH39E0iYVTmn-NoMNM_C35EPrno8LWsRx2Qhr0HApkVLZ-Zc_Vql8ouaSQOiXzEmthrpOPAV5"class="google">Faça login com o Google</a>
+                    <a href="https://pt-br.facebook.com/login/device-based/regular/login/fac"class="facebook">Faça login com o Facebook</a>
+                    <a href="https://www.icloud.com/mail/"class=apple>Faça login com a Apple</a>
+                  </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('senha');
+            passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+</body>
+</html>
