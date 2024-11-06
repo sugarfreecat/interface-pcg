@@ -18,6 +18,8 @@
             overflow: hidden; /* remove barras de rolagem */
         }
 
+
+
         .container {
             display: flex;
             width: 100vw;
@@ -29,10 +31,8 @@
         .imagem-madoka {
             background-color: #FFD2CF;
             width: 50%;
-            /* display: flex;
+            display: flex;
             align-items: center;
-            justify-content: center; */
-            display: grid;
             justify-content: center;
         }
 
@@ -41,13 +41,9 @@
             color: #D53369;
             font-weight: bold;
             margin-bottom: 20px;
-            margin: auto;
-            position: relative;
-            top: 30px;
         }
         .imagem-madoka img {
-            /* max-width: 100%; */
-            width: 400px;
+            max-width: 100%;
             height: auto;}
 
         .aba-branca {
@@ -64,9 +60,7 @@
             margin-bottom: 40px;
             margin-left: 20px;
             margin-top: 40px;
-            margin-right: 20px;
             color: #0d0a0a;
-            text-align: center;
         }
 
         .tudo-espaco {
@@ -235,45 +229,6 @@
             color: #D53369;
             text-decoration: underline;
         }
-
-        @media (max-width: 700px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .aba-branca, .imagem-madoka {
-                width: 100%;
-            }
-            .imagem-madoka {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .imagem-madoka img {
-                width: 150px;
-                height: auto;
-            }
-            .imagem-madoka h1 {
-                margin: 0%;
-                padding: 5%;
-            }
-            .aba-branca {
-                padding-top: 0px;
-            }
-        }
-
-        @media (max-width: 372px) {
-            .aba-branca h2 {
-                font-size: 24px;
-            }
-            .imagem-madoka h1 {
-                font-size: 26px;
-            }
-            .tudo-espaco {
-                margin-bottom: 0px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -281,7 +236,7 @@
         <div class="imagem-madoka">
             <h1>Animes</h1>
             <div>
-                <img src="madoka2.png" alt="Madoka de Madoka Magica"> <!--style="width:475px;"-->
+                <img src="madoka2.png" alt="Madoka de Madoka Magica" style="width:375px;">
             </div>
         </div>
         <div class="aba-branca">
@@ -304,12 +259,8 @@
                 <a href="#" class="esqueceu-senha">Esqueceu a senha?</a>
 
                 <div class="botao">
-                    <a href="index.html"class="entrar-botao">Entrar</a>
-<<<<<<< HEAD
-                    <a href="segunda.html"class="cadastrar-botao">Cadastrar</a>
-=======
-                    <a href="segunda.html" class="cadastrar-botao">Cadastrar</a>
->>>>>>> adicoes
+                    <a href="/segunda.html"class="entrar-botao">Entrar</a>
+                    <a href="/segunda.html"class="cadastrar-botao">Cadastrar</a>
                 </div>
                 <div class="login-social">
                     <a href="https://accounts.google.com/v3/signin/identifier?dsh=S1812573153%3A1655944654029516&flowEntry=ServiceLogin&flowName=WebLiteSignIn&ifkv=AX3vH39E0iYVTmn-NoMNM_C35EPrno8LWsRx2Qhr0HApkVLZ-Zc_Vql8ouaSQOiXzEmthrpOPAV5"class="google">Faça login com o Google</a>

@@ -14,28 +14,62 @@
     <body>
         <div class="container-fluid"> <!--container se adapta a todos os tamanhos de tela-->
             <div class="row"> 
+                
+                <header class="d-flex header-container py-1 text-light">
+                    <span class="header"><u>Trocar de conta</u></span>
+                    <span class="header mx-2">|</span>
+                    <span class="header" href="primeira-login.html"><u>Sair</u></span>
+                    <span class="header dropdown">
+                        <button class="btn-secondary dropdown-toggle text-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">Português (BR)</button>
+                        <ul class="dropdown-menu op1">
+                            <li>Inglês</li>
+                        </ul>
+                    </span>
+                </header>
+                
                 <div class="barra-rosa col-12 col-md-5 custom-height darkpink-bg"> <!--pra fazer: acertar padding-->
-                    <div class="imagem col-6 col-sm-5 col-md-12"> <!--ocupa 6 colunas normalmente, 5 a partir d-->
+                    <div class="img-txt"> <!--ocupa 6 colunas normalmente, 5 a partir d-->
                         <img src="madoka.webp" alt="madoka pose de luta" class="img-madoka">
-                    </div>
-                    <div class="col-6 textbox col-md-12 col-sm-7">
-                        <h1 class="h1-pagina-inicial text-light text-center league-spartan fw-bold">Relação Entre o Aumento de Popularidade dos Animes e o Declínio da Taxa de Natalidade no Japão</h1>
+                        <h1 class="h1-pagina-inicial text-light text-center league-spartan fw-bold col-6 col-md-12">Relação Entre o Aumento de Popularidade dos Animes e o Declínio da Taxa de Natalidade no Japão</h1>
                     </div>
                 </div>
-                <div class="container col-12 col-sm-9 col-md-5">
+                
+                <div class="container col-9 col-md-5">
                     <h2 class="obj-pesq league-spartan">OBJETIVOS DA NOSSA PESQUISA</h2>
-                    <div class="d-flex align-items-center">
-                        <img src="madoka-homura.png" alt="madoka e homura" class="img-madoka-homura">
+                    <div class="img-txt-2 align-items-center">
+                        <img src="madoka-homura.png" alt="personagens madoka e homura do anime madoka magica" class="img-madoka-homura">
                         <span class="ms-3">
                             <div class="league-spartan caixa-rosa my-1">Explorar a relação entre animes e natalidade</div>
                             <div class="league-spartan caixa-rosa my-2">Analisar como os animes influenciam as atitudes e comportamentos em relação à parentalidade e à formação de famílias</div>
                         </span>
                     </div>
                     <div class="d-flex justify-content-center mt-2">
-                        <button class="league-spartan mx-1">VER PESQUISA</button>
-                        <button class="league-spartan mx-1">VER RESULTADOS</button>
+                        <button class="btn-rosa league-spartan mx-2">VER PESQUISA</button>
+                        <a href="pagina-resultados/resultados.html">
+                            <button class="btn-rosa league-spartan mx-2" href="pagina-resultados/resultados.html">VER RESULTADOS</button>
+                        </a>
                     </div>
                 </div>
+
+                <footer class="d-flex footer-container py-1 text-light">
+                    <span class="footer">Universidade Católica de Santos | 2024</span>
+                    <span class="footer-dropdown">
+                        <button class="btn-secondary dropdown-toggle text-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">LinkedIn</button>
+                        <ul class="dropdown-menu op2">
+                            <li>Elais Macedo</li>
+                            <li>Geovana Andrade</li>
+                            <li>Giovanna Simões</li>
+                            <li>Pedro Henrique</li>
+                        </ul>
+                        <button class="btn-secondary dropdown-toggle text-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">Github</button>
+                        <ul class="dropdown-menu op2">
+                            <li>Elais Macedo</li>
+                            <li>Geovana Andrade</li>
+                            <li>Giovanna Simões</li>
+                            <li>Pedro Henrique</li>
+                        </ul>
+                    </span>
+                </footer>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 

@@ -1,132 +1,328 @@
-body {
-    background-color: #FDE8F1;
+/* Estilos globais */
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
-.container-fluid {
-    margin: 0%;
+body {
+    font-family: 'League Spartan', sans-serif;
+}
+.main{
+    display: flex;
+    margin-left: 150px; /* Espaço para a barra lateral */
+    padding: 20px;
+    flex-direction: column;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #A30057;
+    padding: 20px;
+    width: 100%;
     box-sizing: border-box;
 }
 
-.darkpink-bg {
-    background-color: #A30057;
-}
-
-.league-spartan {
-    font-family: "League Spartan", sans-serif;
-}
-
-
-
-h1 {
-    font-size: 48px; /* Default font size */
-    margin-top: 20px;
+/* Header */
+.header h1 {
     color: white;
+    font-size: 3vw;
     font-weight: bold;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
-#barra-lateral{
-    height: 100vh;
-    width: 20vh;
+
+/* Layout principal */
+.container {
+    display: flex;
+}
+.content {
+    display: flex;
+    flex: 1; /* Ocupa o restante do espaço abaixo do header */
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: flex-start; /* Alinha o gráfico e a descrição no topo */
+    padding: 2rem 1rem;
+    gap: 1rem; /* Espaçamento entre gráfico e descrição */
+}
+
+/* Barra Lateral */
+.barra-lateral {
+    width: 120px;
+    max-width: 150px;
     background-color: #A30057;
     border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px; 
-    overflow: hidden;
-    display: flex; /* Adicionando flexbox */
-    flex-direction: column; /* Direção da coluna */
+    border-bottom-right-radius: 15px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-}
-
-#barra-lateral h2{
-    color: white;
-    text-align: center;
-     /* Usando vw para ajuste automático */
-    font-weight: bold;
-    flex-grow: 0; /* Não expande */
-}
-
-#barra-lateral #legenda{
-    font-size: 1.9vw;
-}
-
-#header{
-    background-color: #A30057;
-    height: 15vh;
-    overflow: hidden;
-    position: relative;
-}
-
-#link-voltar {
-    text-align: center; /* Centraliza o texto do link */
-    padding: 10px; /* Espaçamento ao redor do link */
-    color: white; /* Cor do texto */
-    text-decoration: underline; /* Remove sublinhado do link */
-    font-size: 20px; /* Tamanho da fonte do link */
-}
-
-#link-voltar:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
-}
-
-.header-image {
-    width: auto; /* Mantém a proporção original */
-    height: auto; /* Mantém a proporção original */
-    object-fit: contain; /* Ajusta a imagem para caber no contêiner sem cortar */
-    position: absolute; /* Para garantir que a imagem se ajuste ao header */
-    top: 50%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta para centralizar a imagem corretamente */
-}
-
-#kyubey-sentado{
     position: absolute;
+    padding: 20px;
+    padding-top: 1rem;
+    box-sizing: border-box;
+    top: 0;
     left: 0;
-    top: 50%;
-    transform: translate(0, -50%);
-    width: 146px;
-    height: 87px;
+    min-height: 100vh; /* Ocupa toda a altura da página */
+    padding-top: 20px; /* Adiciona espaço para o header */
+}
+.font-controls,
+.graphic-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+.font-controls p,
+.graphic-controls p {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
 }
 
-#kyubey-deitado{
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translate(100%, -50%);
-  width: 445px;
-  height: 110px;
+.font-controls button,
+.graphic-controls button {
+    padding: 8px 10px;
+    font-size: 1rem;
+    background-color: #870046;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.bola{
-    height: 20px;
-    width: 20px;
-    margin-top:20px;
+.font-controls button:hover,
+.graphic-controls button:hover {
+    background-color: #A30057;
 }
-.legendanat{
-    display:flex;
-    align-items: center;
+.barra-lateral p {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
 }
-.legendanat h2{
-    margin-top:20px;
-    font-size:15px;
+.barra-lateral h2 {
+    margin-bottom: 10px;
+}
+#voltar {
+    margin-top: 90px; /* Adiciona um espaço entre o link e os botões de controle */
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #ffffff;
+}
+.content {
+    display: flex;
+    gap: 1rem;
+    padding: 20px;
+    align-items: flex-start;
+    /* Define a largura total que o gráfico e a descrição dividirão */
 }
 
-
-
-#sayaka{
-    width:150px;
-    margin-top: 50%;
-}
-
-.grafico {
-    position: absolute;
-    top: 50%;
-    left: 53%;
-    transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
+.grafico-container{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
+}
+#kyubey-sentado, #kyubey-deitado, #sayaka {
+    width: 10vw;
+    max-width: 120px;
+}
+#kyubey-sentado{
+    margin-left:20vw
+}
+.grafico {
+    flex-grow: 1;
+    flex-basis: 50%; /* Ponto inicial do gráfico ocupa 50% */
+    transition: flex-basis 0.3s ease; /* Transição suave no redimensionamento */
 }
 
+
 .grafico img {
-    width: 1163px;
-    height: 352px;
-    margin-left: 0; /* Remove margens desnecessárias */
+    flex-grow: 2;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+    margin-left:8vw;
+}
+
+.descricao {
+    flex-grow: 1;
+    flex-basis: 50%; /* Ponto inicial da descrição ocupa 50% */
+    background-color: #fce9f1;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: flex-basis 0.3s ease; /* Transição suave no redimensionamento */
+    margin-left: 17vw;
+}
+/* Media Queries */
+
+/* Telas até 1440px */
+@media (max-width: 1440px) {
+    .header h1 {
+        font-size: 2.5vw;
+    }
+    .grafico img {
+        
+        margin-left:10vw ;
+    }
+    .descricao {
+        font-size: 1.2rem;
+        max-width: 40vw;
+        margin-left: 30vw;
+    }
+}
+
+@media (max-width:1024px){
+    .grafico img{
+        margin-left: 60px;
+    }
+}
+
+
+/* Telas até 960px */
+@media (max-width: 960px) {
+    .header h1 {
+        font-size: 3vw;
+    }
+    .main-content {
+        flex-direction: column; /* Coloca gráfico e descrição em coluna */
+        align-items: center;
+    }
+    .descricao {
+        font-size: 1rem;
+        max-width: 40vw;
+    }
+    .grafico img {
+        max-width: 100vh;
+    }
+    .barra-lateral {
+        width: 120px;
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Telas até 768px */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 4vw;
+    }
+    .main-content {
+        padding: 1.5rem 1rem;
+    }
+    .grafico img {
+        max-width: 100vh;
+    }
+    .descricao {
+        font-size: 1.1rem;
+        padding: 1rem;
+        max-width: 40vw;
+    }
+    .barra-lateral {
+        width: 120px;
+        padding: 10px;
+    }
+}
+
+/* Telas até 576px */
+@media (max-width: 576px) {
+    .header h1 {
+        font-size: 5vw;
+    }
+    .grafico img {
+        max-width: 100vh;
+    }
+    .descricao {
+        font-size: 1rem;
+        padding: 1rem;
+        max-width: 40vw;
+    }
+    .barra-lateral {
+        width: 100px;
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Media Queries */
+
+/* Telas até 480px */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 6vw;
+    }
+    .main-content {
+        padding: 1rem 0.5rem;
+    }
+    .grafico img {
+        max-width: 100vh;
+    }
+    .descricao {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+        max-width: 40vw;
+    }
+    .barra-lateral {
+        width: 90px;
+        padding: 5px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Telas até 430px */
+@media (max-width: 430px) {
+    .header h1 {
+        font-size: 7vw;
+    }
+    .grafico img {
+        max-width: 100vh;
+    }
+    .descricao {
+        font-size: 0.85rem;
+        padding: 0.7rem;
+        max-width: 60vw;
+    }
+    .barra-lateral {
+        width: 80px;
+        padding: 5px;
+        font-size: 0.7rem;
+    }
+    .barra-lateral .legendanat{
+        font-size: 0.8rem;
+    }
+}
+
+/* Telas até 320px */
+@media (max-width: 320px) {
+    .header h1 {
+        font-size: 8vw;
+    }
+    .content {
+        padding: 0.8rem 0.4rem;
+    }
+    .grafico img {
+        max-width: 60vw;
+    }
+    .descricao {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+        max-width: 80vw;
+    }
+    .barra-lateral {
+        width: 70px;
+        padding: 3px;
+        font-size: 0.2rem;
+    }
+    .barra-lateral .legendanat{
+        font-size: 0.8rem;
+    }
 }

@@ -12,44 +12,56 @@
         <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header class="d-flex justify-content-center" id="header">
+        <header class="header">
             
-            <h1>Resultados do Projeto</h1>
+            <h1 class="titulo">Resultados do Projeto</h1>
 
-            <img src="/interface-pcg/pagina-resultados/imagens/794dc79161c88793440f7380300bdd5f 1.png" alt="Personagem do anime Madoka Magica chamado Kyubey" class="header-image" id="kyubey-sentado" >
-            <img src="/interface-pcg/pagina-resultados/imagens/thumb-1920-657599 1.png" alt="Personagem do anime Madoka Magica chamado Kyubey" class="header-image" id="kyubey-deitado" >
+            <img src="imagens/794dc79161c88793440f7380300bdd5f 1.png" alt="Personagem do anime Madoka Magica chamado Kyubey"  id="kyubey-sentado" >
+            <img src="imagens/thumb-1920-657599 1.png" alt="Personagem do anime Madoka Magica chamado Kyubey"  id="kyubey-deitado" >
 
           </header>
 
+          <div class="container">
+            <aside class="barra-lateral" id="barra-lateral">
+                <p class="legendanat">Legenda</p>
+                <p class="legendanat">🔵 Taxa de Natalidade</p>
+                <p class="legendanat">🔴 Quantidade de Animes lançados</p>
+                
+                <div class="containersayaka">
+                    <img src="imagens/DRPG_Sayaka_Miki_Artwork_1 1.png" alt="personagem sayaka do anime madoka magica" id="sayaka" >
+    
+                </div>
+                <div class="font-controls">
+                    <p class="legendanat">Fonte</p>
+                    <button onclick="adjustFontSize('increase')" aria-label="Aumentar fonte e gráfico">A+</button>
+                    <button onclick="adjustFontSize('decrease')" aria-label="Diminuir fonte e gráfico">A-</button>
+                </div>
+                <div class="graphic-controls">
+                    <p class="legendanat">Gráfico</p>
+                    <button onclick="adjustGraphicSize('increase')" aria-label="Aumentar gráfico">Aumentar tamanho</button>
+                    <button onclick="adjustGraphicSize('decrease')" aria-label="Diminuir gráfico">Diminuir tamanho</button>
+                </div>
 
-        <div class="d-flex flex-column flex-shrink-0 p-3" id="barra-lateral">
-            <h2 id="legenda">Legenda</h2>
-            <div class="legendanat">
-                <img src="/interface-pcg/pagina-resultados/imagens/Ellipse 1.png" alt="azul" class="bola">
-                <h2>Taxa de Natalidade</h2>
+
+
+            <a href="../login1.html" id="voltar" class="text-white mt-auto">Voltar</a>
+            </aside>
+
+            <main class="content">
+                <div class="grafico-container">
+                    <div class="grafico">
+                        <img src="imagens/Captura de tela 2024-10-13 230542 1.png" alt="">
+                    </div>
+                </div>
+                
+    
             </div>
-
-            <div class="legendanat">
-                <img src="/interface-pcg/pagina-resultados/imagens/Ellipse 2.png" alt="laranja" class="bola" >
-                <h2>Quantidade de Animes lançados</h2>
-            </div>
-
-            <div class="containersayaka">
-                <img src="/interface-pcg/pagina-resultados/imagens/DRPG_Sayaka_Miki_Artwork_1 1.png" alt="personagem sayaka do anime madoka magica" id="sayaka" >
-
-            </div>
-            
-            
-            <a href="#" id="link-voltar" class="text-white mt-auto">Voltar</a>
-          </div>
-        
-
-
-          <div class="grafico">
-                <img src="/interface-pcg/pagina-resultados/imagens/Captura de tela 2024-10-13 230542 1.png" alt="">
-          </div>
+                <div class="descricao" tabindex="0">
+                    <p>O gráfico acima representa as flutuações das taxas de natalidade no Japão e da quantidade de animes lançados por temporada. Notamos que há sim uma correlação entre ambos já que, como podemos observar, quando há um pico de um, o outro está em uma baixa bem considerável. Em conclusão, a pesquisa sugere que há sim uma influência dos lançamentos recorrentes de animes na natalidade e formação de famílias Japonesas, quanto mais animes sendo lançados em determinada época, menor é o número de pessoas nascendo</p>
+                </div>
+            </main>
           
-      <script src="index.js"></script>
+      <script src="resultados.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
