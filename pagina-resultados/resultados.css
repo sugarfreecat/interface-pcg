@@ -1,513 +1,328 @@
-html, body {
-    height: 100%; /* Garante que o html e body ocupem 100% da altura da tela */
-    margin: 0;
-    padding: 0;
-}
-body {
-    background-color: #FDE8F1;
-}
-.container-fluid {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* O contêiner ocupa 100% da altura da tela */
+/* Estilos globais */
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
-.darkpink-bg {
-    background-color: #A30057;
+body {
+    font-family: 'League Spartan', sans-serif;
 }
-
-.league-spartan {
-    font-family: "League Spartan", sans-serif;
-}
-
-
-
-h1 {
-    font-size: 3vw; /* Ajustável com largura da tela */
-    margin-top: 1rem;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-}
-
-
-
-
-.barra-lateral {
-    height: 100vh;
-    width: 15vw;
-    max-width: 150px;
-    background-color: #A30057;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    overflow: hidden;
+.main{
     display: flex;
+    margin-left: 150px; /* Espaço para a barra lateral */
+    padding: 20px;
     flex-direction: column;
-    align-items: center;
-    padding-top: 1rem;
-}
-
-.barra-lateral h2 {
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1rem;
-    margin-right:1rem;
-}
-
-
-.barra-lateral #legenda {
-    font-size: 1.5vw;
-}
-.bola {
-    height: 20px;
-    width: 20px;
-    margin: 0.5rem; /* Espaçamento vertical entre as bolas */
-}
-.legendanat {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    margin-bottom: 1rem; /* Espaço entre os itens */
-    width: 100%;
-}
-.legendanat h2 {
-    margin: 0.5rem 0; /* Espaço entre o texto e as bordas */
-    font-size: 1.2vw; /* Fonte responsiva baseada na largura da tela */
-    flex: 1 1 50%; /* Ajuste dinâmico de tamanho ocupando até 50% do espaço disponível */
-    text-align: left; /* Garante que o texto fique alinhado à esquerda */
-}
-
-#sayaka {
-    width: 10vw;
-    height: auto;
-    max-width: 120px;
-    margin-top: 2rem;
 }
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Mantém Kyubey nas extremidades */
+    justify-content: space-between;
     background-color: #A30057;
-    padding: 1rem;
-    position: relative;
+    padding: 20px;
     width: 100%;
+    box-sizing: border-box;
 }
-.header h1{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Centraliza o título */
+
+/* Header */
+.header h1 {
     color: white;
-    font-size: 5vw;
+    font-size: 3vw;
     font-weight: bold;
     text-align: center;
-    margin: 0;
-    font-family: 'League Spartan', sans-serif;
-}
-#kyubey-sentado {
-    width: 10vw;
-    max-width: 150px;
-    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-#kyubey-deitado {
-    width: 10vw;
-    max-width: 150px;
-    height: auto;
+/* Layout principal */
+.container {
+    display: flex;
+}
+.content {
+    display: flex;
+    flex: 1; /* Ocupa o restante do espaço abaixo do header */
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: flex-start; /* Alinha o gráfico e a descrição no topo */
+    padding: 2rem 1rem;
+    gap: 1rem; /* Espaçamento entre gráfico e descrição */
 }
 
-#voltar {
+/* Barra Lateral */
+.barra-lateral {
+    width: 120px;
+    max-width: 150px;
+    background-color: #A30057;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    padding: 20px;
+    padding-top: 1rem;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    min-height: 100vh; /* Ocupa toda a altura da página */
+    padding-top: 20px; /* Adiciona espaço para o header */
+}
+.font-controls,
+.graphic-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+.font-controls p,
+.graphic-controls p {
     color: white;
-    font-size: 2vw;
+    font-size: 1rem;
+    font-weight: bold;
     text-align: center;
-    margin-top: auto;
-    padding: 0.5rem;
 }
 
-#voltar:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+.font-controls button,
+.graphic-controls button {
+    padding: 8px 10px;
+    font-size: 1rem;
+    background-color: #870046;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+.font-controls button:hover,
+.graphic-controls button:hover {
+    background-color: #A30057;
+}
+.barra-lateral p {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.barra-lateral h2 {
+    margin-bottom: 10px;
+}
+#voltar {
+    margin-top: 90px; /* Adiciona um espaço entre o link e os botões de controle */
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #ffffff;
+}
+.content {
+    display: flex;
+    gap: 1rem;
+    padding: 20px;
+    align-items: flex-start;
+    /* Define a largura total que o gráfico e a descrição dividirão */
+}
 
-
-
-.grafico, .descricao {
+.grafico-container{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto; /* Remove margens extras */
-    max-width: 90vw;
-    flex-direction: column;
+    margin-bottom: 20px;
 }
-.grafico{
-    margin-top: -44rem;
-    margin-left: 9rem;
+#kyubey-sentado, #kyubey-deitado, #sayaka {
+    width: 10vw;
+    max-width: 120px;
+}
+#kyubey-sentado{
+    margin-left:20vw
+}
+.grafico {
+    flex-grow: 1;
+    flex-basis: 50%; /* Ponto inicial do gráfico ocupa 50% */
+    transition: flex-basis 0.3s ease; /* Transição suave no redimensionamento */
 }
 
+
 .grafico img {
-    width: 100%;
+    flex-grow: 2;
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+    margin-left:8vw;
 }
 
 .descricao {
-    margin-top: 2rem;
-    background-color: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    font-family: 'League Spartan', sans-serif;
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.6;
-    max-width: 84vw;
-    margin-left: 13rem;
+    flex-grow: 1;
+    flex-basis: 50%; /* Ponto inicial da descrição ocupa 50% */
+    background-color: #fce9f1;
+    padding: 15px;
+    border-radius: 10px;
     text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: flex-basis 0.3s ease; /* Transição suave no redimensionamento */
+    margin-left: 17vw;
 }
-
-
-/* Telas até 2560px (4K) */
-@media (max-width: 2560px) {
-    .barra-lateral {
-        width: 8vw;
-        max-width: 240px;
-        height: 900px;
-  }
-    }
-
-    .grafico {
-        margin-top: -42rem;
-        margin-left: 9rem;
-}
-
-
-    .grafico img {
-        max-width: 1800px; /* Gráfico grande para monitores 4K */
-    }
-
-    .descricao {
-        font-size:1.2vw;
-    max-width: 69vw;
-    margin-left: 20vw;
-    padding: 4rem;
-    height: 253px;
-    }
-
-    h1 {
-        font-size: 2vw; /* Ajuste no título para ficar proporcional */
-    }
-
-    .legendanat h2 {
-        font-size: 1.5rem; /* Fonte maior para legendas */
-    }
-
-    .bola {
-        height: 25px; /* Bolas ainda maiores para telas 4K */
-        width: 25px;
-    }
-
-
-
-
-
-
-
-
-
-
+/* Media Queries */
 
 /* Telas até 1440px */
 @media (max-width: 1440px) {
-    .barra-lateral {
-        width: 8vw; /* Mais estreita para telas maiores */
-        height: 1200px;
-        max-width: 220px; /* Aumenta um pouco a largura máxima */
+    .header h1 {
+        font-size: 2.5vw;
     }
-
-    .grafico {
-        max-width: 80vw;
-        margin-left: 13rem; /* Mais margem à esquerda */
-    }
-
     .grafico img {
-        margin-top:-35vw; /* Gráfico maior em telas de 1440px */
+        
+        margin-left:10vw ;
     }
-
-    .descricao {
-        font-size: 2vw;
-  padding: 0.8rem;
-  line-height: 1.4;
-  height: 23vw;
-  width: 282vw;
-  margin-left: 20vw;
-    }
-
-    h1 {
-        font-size: 2.5vw; /* Fonte proporcional a telas de 1440px */
-    }
-
-    .legendanat h2 {
-        font-size: 1vw; /* Fonte maior para legendas */
-    }
-
-    .bola {
-        height: 20px; /* Bolas maiores para telas grandes */
-        width: 20px;
-    }
-}
-
-
-@media (max-width: 1366px) {
-    .barra-lateral {
-        width: 9vw; /* A barra lateral fica mais estreita */
-        max-width: 200px;
-        height: 100vh;
-    }
-
-    .grafico {
-        margin-left: 15rem; /* Mais margem em telas grandes */
-    }
-
-    .grafico img {
-        margin-top:5vw; /* Imagem grande em telas grandes */
-    }
-
     .descricao {
         font-size: 1.2rem;
-        max-width: 70vw; /* Aumenta a largura da descrição em telas maiores */
-        margin-left: 22vw;
-        padding: 2.5rem; /* Padding maior */
-    }
-    
-    h1 {
-        font-size: 2vw; /* Reduz o tamanho do título em telas grandes */
-    }
-
-    .legendanat h2 {
-        font-size: 0.8rem; /* Tamanho de texto maior nas legendas */
-    }
-
-    .bola {
-        height: 25px; /* Aumenta o tamanho das bolas para telas grandes */
-        width: 25px;
+        max-width: 40vw;
+        margin-left: 30vw;
     }
 }
-@media(max-width:1280px){
 
-    .barra-lateral {
-        width: 9vw; /* A barra lateral fica mais estreita */
-        max-width: 200px;
-        height: 100vh;
+@media (max-width:1024px){
+    .grafico img{
+        margin-left: 60px;
     }
+}
 
-    .grafico {
-        margin-top: -38rem;
-        margin-left: 15rem; /* Mais margem em telas grandes */
+
+/* Telas até 960px */
+@media (max-width: 960px) {
+    .header h1 {
+        font-size: 3vw;
     }
-
-    .grafico img {
-        margin-top:-1vw;/* Imagem grande em telas grandes */
+    .main-content {
+        flex-direction: column; /* Coloca gráfico e descrição em coluna */
+        align-items: center;
     }
-
     .descricao {
-        font-size: 1.2rem;
-        max-width: 70vw; /* Aumenta a largura da descrição em telas maiores */
-        margin-left: 18rem;
-        padding: 2.5rem; /* Padding maior */
+        font-size: 1rem;
+        max-width: 40vw;
     }
-
-    h1 {
-        font-size: 2vw; /* Reduz o tamanho do título em telas grandes */
+    .grafico img {
+        max-width: 100vh;
     }
-
-    .legendanat h2 {
-        font-size: 0.8vw; /* Tamanho de texto maior nas legendas */
-    }
-
-    .bola {
-        height: 13px; /* Aumenta o tamanho das bolas para telas grandes */
-        width: 13px;
+    .barra-lateral {
+        width: 120px;
+        padding: 15px;
+        font-size: 0.9rem;
     }
 }
-@media (max-width: 1024px) {
-    .barra-lateral {
-        width: 10vw; /* Reduz a largura para dar mais espaço ao conteúdo */
-        max-width: 180px;
-        height: 100vh;
+
+/* Telas até 768px */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 4vw;
     }
-
-
-    .grafico {
-        margin-left: 12rem; /* Mais margem para telas maiores */
+    .main-content {
+        padding: 1.5rem 1rem;
     }
-
     .grafico img {
-        width: 73vw;
-        margin-left:-10vw;
-        margin-top:-2vw/* Imagem maior em telas maiores */
+        max-width: 100vh;
     }
-
     .descricao {
         font-size: 1.1rem;
-        max-width: 75vw; /* Aumenta a largura da descrição */
-        margin-left: 15vw; /* Ajusta a margem */
-        padding: 2rem; /* Aumenta o padding para telas grandes */
+        padding: 1rem;
+        max-width: 40vw;
     }
-
-    h1 {
-        font-size: 2.5vw; /* Fonte um pouco menor para telas maiores */
-    }
-
-    .legendanat h2 {
-        font-size: 1.2vw; /* Ajuste de fonte para a legenda */
-    }
-    .barra-lateral #legenda{
-        font-size: 2.2vw;
-    }
-    .bola {
-        height: 15px; /* Tamanho das bolas maior */
-        width: 15px;
+    .barra-lateral {
+        width: 120px;
+        padding: 10px;
     }
 }
 
-
-@media (max-width: 768px) {
-    .barra-lateral {
-        width: 10vw;
-        max-width: 80px;
-        height: 85vw;
+/* Telas até 576px */
+@media (max-width: 576px) {
+    .header h1 {
+        font-size: 5vw;
     }
-    
-    .grafico{
-        max-width: 95vw;
-        margin-top: -35rem;
-        margin-left: 6rem;
+    .grafico img {
+        max-width: 100vh;
     }
-   
-
     .descricao {
+        font-size: 1rem;
         padding: 1rem;
-        font-size: 0.9rem;
-        margin-left:15vw;
+        max-width: 40vw;
     }
-    .barra-lateral #legenda{
-        font-size: 2vw;
+    .barra-lateral {
+        width: 100px;
+        padding: 5px;
+        font-size: 0.8rem;
     }
-     .barra-lateral h2 {
-        font-size: 1.7vw;
-  }
-    
+}
 
+/* Media Queries */
 
-    h1 {
+/* Telas até 480px */
+@media (max-width: 480px) {
+    .header h1 {
         font-size: 6vw;
     }
-
+    .main-content {
+        padding: 1rem 0.5rem;
+    }
     .grafico img {
-        margin-top:-10vw;
-        width:80vw;
+        max-width: 100vh;
     }
-}
-
-@media (max-width: 480px) {
-    .barra-lateral {
-        width: 15vw;
-        height: 91vw;
-      }
-      .barra-lateral h2{
-        font-size: 2.7vw;
-
-      }
-    .barra-lateral #legenda{
-        font-size: 3vw;
-        margin-left: 3vw;
-  }
-   
-    .header {
-        height: 6vw;
-        width: 101vw;
-}
-    .titulo {
-        font-size: 10px;
-    }
-
-    .grafico {
+    .descricao {
+        font-size: 0.9rem;
+        padding: 0.8rem;
         max-width: 40vw;
-        padding: 0.3rem;
-        margin-left: 62vw;
-      }
-
-      .descricao {
-        font-size: 3vw;
-        padding: 0.8rem;
-        line-height: 1.4;
-        height: 50vw;
-        width: 308vw;
-        margin-left:25vw;
-      }
-
-    .grafico img {
-        width: 82vw;
-        height: 35vw;
-        margin-top: 50vw;
-        margin-left:-42vw;
     }
-    .bola{
-        width: 20px;
-        height: 20px;
-    }
-    }
-   
-
-@media(max-width:375px){
     .barra-lateral {
-        width: 15vw;
-        height: 91vw;
-      }
-      .barra-lateral h2{
-        font-size: 2.7vw;
-
-      }
-    .barra-lateral #legenda{
-        font-size: 3vw;
-        margin-left: 3vw;
-  }
-   
-    .header {
-        height: 6vw;
-        width: 101vw;
-}
-    .titulo {
-        font-size: 10px;
+        width: 90px;
+        padding: 5px;
+        font-size: 0.75rem;
     }
+}
 
-
-
-      .descricao {
-        font-size: 3vw;
-        padding: 0.8rem;
-        line-height: 1.4;
-        height: 50vw;
-        width: 308vw;
-        margin-left:25vw;
-      }
-
+/* Telas até 430px */
+@media (max-width: 430px) {
+    .header h1 {
+        font-size: 7vw;
+    }
     .grafico img {
-        width: 82vw;
-        height: 35vw;
-        margin-top: 65vw;
-        margin-left:-45vw;
+        max-width: 100vh;
     }
-    .bola{
-        width: 20px;
-        height: 20px;
+    .descricao {
+        font-size: 0.85rem;
+        padding: 0.7rem;
+        max-width: 60vw;
+    }
+    .barra-lateral {
+        width: 80px;
+        padding: 5px;
+        font-size: 0.7rem;
+    }
+    .barra-lateral .legendanat{
+        font-size: 0.8rem;
     }
 }
 
+/* Telas até 320px */
+@media (max-width: 320px) {
+    .header h1 {
+        font-size: 8vw;
+    }
+    .content {
+        padding: 0.8rem 0.4rem;
+    }
+    .grafico img {
+        max-width: 60vw;
+    }
+    .descricao {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+        max-width: 80vw;
+    }
+    .barra-lateral {
+        width: 70px;
+        padding: 3px;
+        font-size: 0.2rem;
+    }
+    .barra-lateral .legendanat{
+        font-size: 0.8rem;
+    }
+}
